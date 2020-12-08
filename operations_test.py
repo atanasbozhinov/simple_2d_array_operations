@@ -1,7 +1,7 @@
 
 import unittest
 import numpy as np
-import matrix_operations
+import core.matrix_operations
 
 class OperationsTests(unittest.TestCase):
     def test_append(self):
