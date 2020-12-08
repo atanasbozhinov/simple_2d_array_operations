@@ -11,7 +11,7 @@ class OperationsTests(unittest.TestCase):
 
         test_output = mop.append(input_x, input_y)
 
-        self.assertFalse(expected_output == test_output)
+        self.assertTrue(np.array_equal(expected_output, test_output))
 
     def test_combine(self):
         input_x = np.array([[1, 2, 3], [4, 5, 6]])
@@ -20,7 +20,7 @@ class OperationsTests(unittest.TestCase):
 
         test_output = mop.combine(input_x, input_y)
 
-        self.assertFalse(expected_output == test_output)
+        self.assertTrue(np.array_equal(expected_output, test_output))
 
     def test_sum(self):
         input_x = np.array([[1, 2, 3], [4, 5, 6]])
@@ -29,7 +29,7 @@ class OperationsTests(unittest.TestCase):
 
         test_output = mop.sum(input_x, input_y)
 
-        self.assertFalse(expected_output == test_output)
+        self.assertTrue(np.array_equal(expected_output, test_output))
 
 
 if __name__ == '__main__':
