@@ -13,6 +13,22 @@ class OperationsTests(unittest.TestCase):
 
         self.assertTrue(np.array_equal(expected_output, test_output))
 
+        input_x = np.array([[1, 2], [4, 5, 6]])
+        input_y = np.array([[7, 8, 9], [10, 11, 12], [13, 14, 15]])
+        expected_output = None
+
+        test_output = mop.append(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
+
+        input_x = np.array([[1, 2, 3], [4, 5, 6]])
+        input_y = np.array([[7, 8, 9], [10, 11, 12], [13, 14]])
+        expected_output = None
+
+        test_output = mop.append(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
+
     def test_combine(self):
         input_x = np.array([[1, 2, 3], [4, 5, 6]])
         input_y = np.array([[7, 8], [9, 10]])
@@ -21,6 +37,22 @@ class OperationsTests(unittest.TestCase):
         test_output = mop.combine(input_x, input_y)
 
         self.assertTrue(np.array_equal(expected_output, test_output))
+
+        input_x = np.array([[1, 2, 3], [4, 5, 6]])
+        input_y = np.array([[7, 8]])
+        expected_output = None
+
+        test_output = mop.combine(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
+
+        input_x = np.array([[1, 2, 3]])
+        input_y = np.array([[7, 8], [9, 10]])
+        expected_output = None
+
+        test_output = mop.combine(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
 
     def test_sum(self):
         input_x = np.array([[1, 2, 3], [4, 5, 6]])
@@ -31,6 +63,25 @@ class OperationsTests(unittest.TestCase):
 
         self.assertTrue(np.array_equal(expected_output, test_output))
 
+        input_x = np.array([[1, 2], [4, 5, 6]])
+        input_y = np.array([[7, 8, 9], [10, 11, 12]])
+        expected_output = np.array([[8, 10, 12], [14, 16, 18]])
+
+        expected_output = None
+
+        test_output = mop.sum(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
+
+        input_x = np.array([[1, 2, 3], [4, 5, 6]])
+        input_y = np.array([[7, 8, 9]])
+        expected_output = np.array([[8, 10, 12], [14, 16, 18]])
+
+        expected_output = None
+
+        test_output = mop.sum(input_x, input_y)
+
+        self.assertTrue(test_output == expected_output)
 
 if __name__ == '__main__':
     unittest.main()
